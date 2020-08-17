@@ -252,6 +252,9 @@
     
     if (name) {
         threadModel.name = name;
+        
+        // Hardcode here, due to can add entityID param
+        threadModel.entityID = name;
     }
     
     for (id<PUser> user in usersToAdd) {

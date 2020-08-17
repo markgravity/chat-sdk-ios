@@ -673,12 +673,13 @@
     return [self addUserWithEntityID:user.entityID].thenOnMain(^id(id success)
     {
         // We only add the thread to the user if it's a private thread
-        if (_model.type.intValue & bThreadFilterPrivate) {
-            return [user addThreadWithEntityID:self.entityID];
-        }
-        else {
-            return success;
-        }
+        return [user addThreadWithEntityID:self.entityID];
+//        if (!(_model.type.intValue & bThreadFilterPublic)) {
+//            return [user addThreadWithEntityID:self.entityID];
+//        }
+//        else {
+//            return success;
+//        }
     }, Nil);
 }
 

@@ -110,8 +110,8 @@
     return [[CCMessageWrapper messageWithModel:messageModel] send].thenOnMain(^id(id success) {
         
         // Send a push notification for the message
-        NSDictionary * pushData = [BChatSDK.push pushDataForMessage:messageModel];
-        [BChatSDK.push sendPushNotification:pushData];
+//        NSDictionary * pushData = [BChatSDK.push pushDataForMessage:messageModel];
+//        [BChatSDK.push sendPushNotification:pushData];
         
         [BHookNotification notificationMessageDidSend:messageModel];
         return success;
